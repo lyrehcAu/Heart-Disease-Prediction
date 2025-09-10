@@ -1,0 +1,111 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+.title{
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #eaeaea;
+}
+.navbar .logo{
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+}
+
+.navbar .login-button{
+    background-color: red;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.page-content{
+    padding: 30px 50px;
+}
+
+.container{
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.form-triple, .form-alone{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group{
+    flex: 1;
+}
+
+.form-group label{
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input, .form-group select{
+    width: 94%;
+    padding: 8px;
+    border: 1px;
+    border-radius: 4px;
+    background-color: #eeeeeee7;
+}
+
+.form-group input:focus, .form-group select:focus{
+    outline: none;
+}
+
+.buton{
+    background-color: transparent;
+    width: 5%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.buton:hover{
+    color: red;
+    background-color: transparent;
+    box-shadow: 0 0 7px red;
+}
+
+.pred-result{
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.pred-result.green{
+    background-color: #d4edda;
+    color: green;
+    border: 1px solid #c3e6cb;
+}
+
+.pred-result.red{
+    background-color: #f8d7da;
+    color: red;
+    border: 1px solid #f5c6cb;
+}
