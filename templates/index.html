@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heartcare - Heart Disease Detector</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">HeartCare</div>
+    </div>
+    <div class="title">
+        <h1>Heart Disease Prediction <span>❤️</span></h1>
+    </div>
+    <div class="container">
+        <h2>Please input your health information:</h2>
+        <form class="forms" method="POST" action="/predict">
+            <div class="form-triple">
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="0"  value="0" max="80">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="resting_ecg">Resting ECG Results</label>
+                    <select id="resting_ecg" name="resting_ecg">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-triple">
+                <div class="form-group">
+                    <label for="blood_pressure">Resting Blood Pressure (mmHg)</label>
+                    <input type="number" id="blood_pressure" name="blood_pressure" min="0" value="0" max="200">
+                </div>
+                <div class="form-group">
+                    <label for="chest_pain">Chest Pain Type</label>
+                    <select id="chest_pain" name="chest_pain">
+                        <option value="typical">Typical</option>
+                        <option value="typical_angina">Typical Angina</option>
+                        <option value="non_anginal">Non-anginal Pain</option>
+                        <option value="asymptomatic">Asymptomatic</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="st_slope">Slope of ST Segment</label>
+                    <select id="st_slope" name="st_slope">
+                        <option value="normal">Normal</option>
+                        <option value="upsloping">Upsloping</option>
+                        <option value="flat">Flat</option>
+                        <option value="downsloping">Downsloping</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-triple">
+                <div class="form-group">
+                    <label for="cholesterol">Serum Cholesterol (mg/dl)</label>
+                    <input type="number" id="cholesterol" name="cholesterol" min="0" value="0" max="603">
+                </div>
+                <div class="form-group">
+                    <label for="fasting_sugar">Fasting Blood Sugar > 120 mg/dl</label>
+                    <select id="fasting_sugar" name="fasting_sugar">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exercise_angina">Exercise-induced Angina</label>
+                    <select id="exercise_angina" name="exercise_angina">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-alone">
+                <div class="form-group">
+                    <label for="st_depression">ST Depression Induced by Exercise</label>
+                    <input type="number" id="st_depression" name="st_depression" min="-2.6" step="0.1" value="0.0" max="6.2">
+                </div>
+                <div class="form-group">
+                    <label for="max_heart_rate">Maximum Heart Rate Achieved</label>
+                    <input type="number" id="max_heart_rate" name="max_heart_rate" min="60" value="60" max="202">
+                </div>
+            </div>
+            <button type="submit" class="buton">Predict</button>
+        </form>
+        <div class="result">
+            {% if result %}
+            <p class="pred-result {{'green' if result == 'No heart disease detected.' else 'red'}}">
+                Prediction: {{ result }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
